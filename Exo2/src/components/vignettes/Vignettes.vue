@@ -1,14 +1,10 @@
 <template>
-  <div class="home">
-    <div class="title">{{ title }}</div>
-    <slot name="content">
-      <div v-if="type === 'carrousel'">
-          <v-row
-          no-gutters
-          style="height:400px;float:right;border:1px solid red; overflow-y:auto"
-          >
-            <v-col v-for="k in 6" :key="k">
-              <v-card max-width="300">
+<v-container fill-height>
+     <div>{{title}}</div>
+     <div id="box-vignette">
+        <div v-for="k in 20" :key="k">
+         <div class="list-wrapper">
+                <v-card>
                 <v-img
                   height="250"
                   src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
@@ -20,31 +16,10 @@
                 <v-divider class="mx-4"></v-divider>
                 <v-card-actions>fdfdf </v-card-actions>
               </v-card>
-            </v-col>
-          </v-row>
-      </div>
-      <div v-if="type === 'simple'">
-        <div>
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img
-                  src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                  alt="Avatar"
-                  style="height: 300px"
-                />
-              </div>
-              <v-card-text class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
-              </v-card-text>
-            </div>
-          </div>
-        </div>
-      </div>
-    </slot>
-  </div>
+             </div>
+    </div> 
+     </div>
+</v-container>
 </template>
 
 <script lang="ts">
@@ -70,55 +45,21 @@ const MixinsDeclaration = mixins(Props);
 export default class VignetteCarousel extends MixinsDeclaration {}
 </script>
 <style scoped>
-.title {
-  width: 90%;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #515151;
-  font-family: "Amaranth", sans-serif !important;
-  font-weight: bold;
-  font-size: 1.5em !important;
+#box-vignette {
+  display: flex; 
+  margin:auto;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
 }
-
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-  margin: auto;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
+.list-wrapper {
+  margin: 0 3px;
   height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-card-back {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateY(180deg);
+  box-sizing:content-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 15px 15px 15px 15px;
 }
 </style>

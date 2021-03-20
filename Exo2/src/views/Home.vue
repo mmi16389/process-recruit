@@ -4,7 +4,7 @@
       title="Carrousel - vignette simple"
       type="carrousel"
     />
-    <Vignettes title="Vignette simple" type="simple" />
+   <Vignettes title="Vignette simple" type="simple" />
   </div>
 </template>
 
@@ -24,7 +24,9 @@ export default class Home extends Vue {}
 <style scoped>
 .home-container {
   margin: auto;
-  width: 90%;
   padding: 30px 30px 30px 30px;
+  border: 1px solid green;
+  min-height: 300px;
+  overflow: auto;
 }
 </style>
