@@ -38,8 +38,9 @@ export default class Home extends Vue {
       id: "1",
       img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
       title: "Bienvenue aux invalides",
-      subtitle: "genenn",
+      subtitle: "Star",
       text: "belle monde de jalousie et de perte",
+      flag:"green",
       action: ()=>{}
     },
     {
@@ -47,6 +48,7 @@ export default class Home extends Vue {
       img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
       title: "Bienvenue aux invalides",
       subtitle: "genenn",
+      flag:"red",
       text: "belle monde deelle monde deelle monde deelle monde deelle monde deelle monde de jalousie et de perte",
       action: ()=>{}
     },

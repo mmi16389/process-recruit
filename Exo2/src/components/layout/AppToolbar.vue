@@ -46,38 +46,10 @@ export default class AppToolbar extends Vue {
 
 <style lang="scss" scoped>
 .v-tab {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    flex: 0 1 auto;
-    font-size: 0.875rem;
-    font-weight: 500;
-    justify-content: center;
-    letter-spacing: 0.0892857143em;
-    line-height: normal;
-    min-width: 90px;
-    max-width: 360px;
-    outline: none;
-    padding: 0 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  text-transform: capitalize;
 	font-family: 'Amaranth', sans-serif;
 	font-weight: bold;
-}
-.v-application .secondary {
-  background-color: #282d32 !important;
-  border-color: #282d32 !important;
-}
-.v-application .cadet {
-  background-color: #392f5a !important;
-  border-color: #392f5a !important;
+  color:white!important
 }
 .v-application .v-tabs-slider {
   background-color: transparent;

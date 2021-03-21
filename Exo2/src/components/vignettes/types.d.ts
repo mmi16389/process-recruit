@@ -4,5 +4,5 @@ export interface Card{
     title: string,
     subtitle: string,
     text: string,
-    url?: string;
+    action?: () => void
 }
