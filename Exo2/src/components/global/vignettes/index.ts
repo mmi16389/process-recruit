@@ -1,4 +1,4 @@
-import Vignettes from './Vignettes.vue'; 
+import Vignettes from './Vignettes.vue';
 
 export {
 	Vignettes,

@@ -21,34 +21,6 @@ export default class AppToolbar extends Vue {
   get links() {
     return this.url;
   }
-  mounted(){
-    document.addEventListener('scroll', ()=>{
-      /*const elmToolbar = document.getElementById('toolbar');
-      const elmHeader = document.getElementById('header');
-      const barY = elmToolbar?.getBoundingClientRect().top;
-      const headerY = elmHeader?.getBoundingClientRect().top;
-      const calc=160-Number(headerY)
-      if(elmToolbar !==null  && headerY ===-154){
-           elmToolbar.style.position='fixed';
-           elmToolbar.style.left='0';
-           elmToolbar.style.right='0';
-           elmToolbar.style.zIndex='10'; 
-           elmToolbar.style.top=`${calc}px`
-      }*/
-
-      const header = document.getElementById("header");
-      const windowHeight = document.body.clientHeight,
-		  currentScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const cal = windowHeight - header.offsetHeight;
-	    // console.log(currentScroll);
-    	// header.className = (currentScroll >= header.offsetHeight) ? "fixed" : "";
-      if(currentScroll >= header.offsetHeight){
-        header.style.position='fixed';
-        header.style.left='0';
-        header.style.right='0';
-      }
-    },false);
-  }
 }
 </script>
 

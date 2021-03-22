@@ -1,1 +1,8 @@
 /** Define style for components --not: global */
+// position of header: fixed
+#app-header{
+    position: fixed;
+    z-index:10;
+    left:0;
+    right:0;
+ }

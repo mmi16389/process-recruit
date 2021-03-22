@@ -1,7 +1,7 @@
 <template>
   <!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
   <VApp v-cloak>
-    <div id="header">
+    <div id="app-header">
        <AppHeader /> 
        <AppToolbar />
     </div>

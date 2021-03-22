@@ -1,6 +1,6 @@
-export interface Card{
+export interface Card {
     id: string,
-    img:string,
+    img: string,
     title: string,
     subtitle: string,
     text: string
