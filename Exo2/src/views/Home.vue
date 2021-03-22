@@ -1,31 +1,70 @@
 <template>
   <div class="home-container">
-    <Vignettes
-      title="vignette simple"
-      type="simple"
-      :cards="cards"
-    />
-
+    <!-- Example vignette Simple: carousel //-->
      <Vignettes
+      id="simple"
+      title="Caroussel - vignette simple"
+      type="simple"
+      :cards="simple"
+      @vignette:popin="showdialog($event)"
+    />
+    <!-- //-->
+
+     <!-- Example vignette Simple: carousel //-->
+     <Vignettes
+      id="large"
       title="vignette large"
       type="large"
-      :cards="card"
-
+      :cards="large"
+      @vignette:popin="showdialog($event)"
     />
+    <!-- //-->
 
-    <Vignettes
-      title="vignette flip"
+     <!-- Example vignette Simple: Flip //-->
+     <Vignettes
+      id="flip"
+      title="vignette Flip"
       type="flip"
-      :cards="card"
-
+      :cards="flip"
+      @vignette:popin="showdialog($event)"
     />
+    <!-- //-->
+
+      <v-dialog
+        v-model="dialog"
+        width="500"
+      >
+        <v-card>
+          <v-card-title >
+             Voir Plus
+          </v-card-title>
+           <v-divider></v-divider>
+          <v-card-text>
+        {{textCard}}
+          </v-card-text>
+  
+          <v-divider></v-divider>
+  
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              text
+              @click="dialog = false"
+            >
+              Accepter
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { Vignettes } from "@/components/vignettes";
+import { Vignettes } from "../components/global/vignettes"; 
+import { vignetteSimple, vignetteLarge, vignetteFlip} from '../assets/db/data';
 
 @Component({
   components: {
@@ -33,66 +72,17 @@ import { Vignettes } from "@/components/vignettes";
   },
 })
 export default class Home extends Vue {
-  cards = [
-    {
-      id: "1",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "Star",
-      text: "belle monde de jalousie et de perte",
-      flag:"green",
-      action: ()=>{}
-    },
-    {
-      id: "2",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      flag:"red",
-      text: "belle monde deelle monde deelle monde deelle monde deelle monde deelle monde de jalousie et de perte",
-      action: ()=>{}
-    },
-    {
-      id: "3",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      text: "belle monde de jalousie et de perte",
-      action: ()=>{}
-    },
-    {
-      id: "4",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      text: "belle monde de jalousie et de perte",
-      action: ()=>{}
-    },{
-      id: "5",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      text: "belle monde de jalousie et de perte",
-      action: ()=>{}
-    },
-    {
-      id: "6",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      text: "belle monde de jalousie et de perte",
-      action: ()=>{}
+    textCard = '';
+    simple = vignetteSimple;
+    large = vignetteLarge;
+    flip = vignetteFlip;
+
+    dialog = false; 
+    
+    showdialog(payload:string){
+         this.textCard = payload;
+         this.dialog=true;
     }
-    ] 
-    card =
-    {
-      id: "1",
-      img:"https://cdn.vuetifyjs.com/images/cards/cooking.png",
-      title: "Bienvenue aux invalides",
-      subtitle: "genenn",
-      text: "pmonde de jalousie et de pertebelle monde de jalousie et de pertebellede pertebelle monde de jalousie et de pertebelle monde de jalousie et de pertebelle monde de jalousie et de pertebelle monde de jalousie et de pertebelle monde de jalousie et de pertebelle monde de jalousie et de perte",
-      action: ()=>{}
-    } 
 }
 </script>
 

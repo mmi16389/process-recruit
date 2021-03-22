@@ -1,10 +1,10 @@
 <template>
   <!-- VApp is an element which is required to use Vuetify. See https://vuetifyjs.com/en/ for help -->
   <VApp v-cloak>
-    <AppHeader />
-
-    <AppToolbar />
-
+    <div id="header">
+       <AppHeader /> 
+       <AppToolbar />
+    </div>
     <VMain>
       <!-- Transition between routes -->
       <transition name="fade" mode="out-in">

@@ -10,29 +10,28 @@
          <div class="list-wrapper">
             <v-card 
                v-customize="type"
-               :width=" __width"
+               :width="width"
             >
-              <v-row :class="{'flip-card-inner': type==='flip'}">
-               <v-col :class="{'flip-card-front': type==='flip'}">
+              <v-row >
+               <v-col>
                <v-img
                   :src="card.img"
                   height=100%
                 ></v-img>
-                 </v-col>
-                <v-col :class="{'flip-card-back': type==='flip'}">
-                  <v-card-title :class="{'large':type==='large'}">{{card.title}}</v-card-title>
+                </v-col>
+                <v-col>
+                  <v-card-title>{{card.title}}</v-card-title>
                   <v-card-subtitle 
-                     v-flag="card.flag" 
-                     :class="{'large':type==='large'}"
+                     v-flag="card.flag"
                    >{{card.subtitle}}
                    </v-card-subtitle>
-                  <v-card-text :class="{'large':type==='large'}">{{card.text}}</v-card-text>
+                  <v-card-text>{{card.text}}</v-card-text>
                </v-col>
                </v-row>
                <v-row>
                 <v-col v-if="type=='large' || type=='simple'">
                   <v-divider></v-divider>
-                  <v-card-text @click="card.action">
+                  <v-card-text @click="$emit('vignette:popin',card.text)">
                       {{locales.actionText}} 
                   </v-card-text>
                 </v-col>
@@ -101,11 +100,6 @@ export default class VignetteCarousel extends MixinsDeclaration {
       return [this.cards]
     }
   }
-
-  /** Compute width of card */
-  get __width(): number {
-    return this.width
-  }
 }
 </script>
 
@@ -119,8 +113,9 @@ export default class VignetteCarousel extends MixinsDeclaration {
   padding-bottom: 8px;
 }
 .large{
-  text-align:left
+  text-align:left!important
 }
+
 .list-wrapper {
   margin: 0 3px;
   height: 100%;
@@ -150,11 +145,9 @@ export default class VignetteCarousel extends MixinsDeclaration {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
-
 .flip-card-front,
 .flip-card-back {
   position: absolute;

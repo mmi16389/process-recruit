@@ -1,7 +1,10 @@
 
 import { DirectiveOptions } from 'vue';
 
-
+/**
+ * Directive to set flag color
+ * subtitle of each card
+ */
 export const Flag: DirectiveOptions = {
     bind(el, binding) { 
       if(binding&& binding.value ==='green'){

@@ -33,6 +33,5 @@ export default class AppHeader extends Vue {}
 	margin: auto;
 	font-family: 'Amaranth', sans-serif;
 	font-size: 4em;
-	margin-top:3%
 }
 </style>

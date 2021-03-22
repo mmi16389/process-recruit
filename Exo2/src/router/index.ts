@@ -8,7 +8,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import(/* webpackChunkName: home-vignette */ '../views/Home.vue'),
+    component: Home,
   }
 ]
 

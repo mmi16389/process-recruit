@@ -3,6 +3,5 @@ export interface Card{
     img:string,
     title: string,
     subtitle: string,
-    text: string,
-    action?: () => void
+    text: string
 }
